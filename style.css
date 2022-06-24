@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+body {
+  align-items: center;
+  background-image: radial-gradient(circle at center, #291b75 35%, #518718);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Dancing Script', cursive;
+  margin: 0;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+#stopwatch {
+  align-items: center;
+  background-color: #aeb8fe;
+  border-radius: 50%;
+  color: #580707;
+  display: flex;
+  flex-direction: column;
+  height: 12rem;
+  width: 12rem;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+  transition: border 0.5s, background-color 0.5s;
+}
+
+#timestamp {
+  font-size: 3rem;
+  margin: 1.5rem 0 1rem;
+}
+
+#actionRow {
+  display: flex;
+}
+
+button {
+  background-color: #ebedff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  padding: 0.25rem 0.5rem;
+}
+
+button:not(:first-child) {
+  margin-left: 0.5rem;
+}
+
+#stopwatch.running {
+  background-color: transparent;
+  border: 0.125rem solid #aeb8fe;
+  color: #0f745c;
+  transition: border 0.5s, background-color 0.5s;
+}
+
+#stopwatch.running button {
+  background: none;
+  border: 0.15rem solid #aeb8fe;
+  color: #aeb8fe;
+}
+
+.counter {
+  animation: fade-out 10s forwards;
+  border: 0.15rem solid #ffb35c;
+  border-radius: 0.5rem;
+  display: block;
+  height: 0.5rem;
+  position: absolute;
+  width: 2.5rem;
+}
+
+.counter::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 0.15rem solid #ffb35c;
+  filter: blur(0.5rem);
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
